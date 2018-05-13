@@ -1,0 +1,100 @@
+/*
+ HTML & CSS only burger button
+ Author: Alice Peters
+ Website: https://alicepeters.de/
+*/
+
+body {
+    background-color: #383838;
+    margin: 0;
+    padding: 0;
+}
+
+/* Example Opening Animation */
+
+@keyframes open {
+    from {
+        left: -100vw;
+    }
+    to {
+        left: 0;
+    }
+}
+
+/* Hiding the checkbox because it would look stupid */
+
+#burgerbutton {
+    display: none;
+}
+
+/* You probably want to replace the text part of the label element with a background via css in productive use */
+
+.burgerimage {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 28pt;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+    color: #ff0000;
+}
+
+/* Example styling of the menu */
+
+nav {
+    background-color: #ffffff;
+    display: block;
+    height: 50px;
+    border-bottom: 3px solid #ff0000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav ul {
+    display: none;
+    position: fixed;
+    top: 53px;
+    margin: 0;
+    padding: 0;
+    width: 50vw;
+    list-style: none;
+}
+
+nav ul li {
+    display: block;
+    width: auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ff0000;
+    background-color: #ffffff;
+    border-bottom: 1px solid #8b0000;
+    display: block;
+    padding: 15px;
+    height: 50px;
+    transition: background 0.5s ease;
+    box-sizing: border-box;
+}
+
+nav ul li a:hover {
+    background-color: #ffc0cb;
+    color: #8b0000;
+}
+
+/* Displaying the menu when #burgerbutton is checked */
+
+#burgerbutton:checked~ul {
+    display: block;
+    animation-name: open;
+    animation-duration: 0.8s;
+}
+
+/* And rotate the visible burger button label when its activated */
+
+#burgerbutton:checked~.burgerimage {
+    transform: rotate(360deg);
+}

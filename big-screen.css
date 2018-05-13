@@ -1,0 +1,15 @@
+@media(min-width:720px) {
+    nav ul {
+        display: block;
+        position: static;
+    }
+    nav ul li {
+        display: inline-block;
+    }
+    nav ul li a {
+        border: none;
+    }
+    .burgerimage {
+        display: none;
+    }
+}
